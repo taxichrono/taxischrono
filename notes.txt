@@ -1,0 +1,23 @@
+const etatReservation = {0: "en attente", 1: "accepté", -1: "Annuleé"};
+const etatTransaction = {
+  0: 'initier',
+  1: "terminer",
+  -1: "Annulé",
+  2: "en cours"
+};
+
+le principe est simple la reservation est envoyé au chauffeur puis sil valide l'etat de la reservation est 
+changé et est accepté dans le cas contraire la reservation est suprimée de chez lui et est envoyé chez un autre.
+par ailleur si après 10 s il nya pas de réaction du coté du chauffeur alors elle est suprimée chez lui
+la reservation ayant un état différent de 0 c'est-à-dire en cours ne peut ètre envoyé à un chauffeur.
+
+deuxièmemnt il faudrais que le véhicule soit en lign e et le véhicule ne peut ètre en ligne qui si le 
+compte du chauffeur est actif. 
+
+dans le cas ou la reservation est accepté le chaufeur est mis hors ligne. 
+puis un transaction est crée.
+
+
+les mots de passe des empruntes: 
+pour taxichrono : TaxisChrono
+pour taxichronodriver: TaxisChronoDriver
