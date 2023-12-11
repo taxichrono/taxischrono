@@ -312,7 +312,7 @@ class ApplicationUser {
         phoneNumber: chauffeurOtp.userTelephone,
         verificationCompleted: (PhoneAuthCredential credential) async {
           await authentication
-              .signInWithCredential(credential)
+              .createUserWithEmailAndPassword(email: chauffeurOtp.userEmail, password: chauffeurOtp.motDePasse!)
               .then((value) async {
             if (value.user != null) {
               await value.user!.updateEmail(chauffeurOtp.userEmail);
@@ -349,6 +349,48 @@ class ApplicationUser {
           message: "Erreur d'enrégistrement Veillez réssayer",
           color: Colors.red,
           long: true);
+    }
+  }
+
+  Future<void> registerUser(BuildContext context, ApplicationUser user) async {
+    try {
+      if (user.motDePasse != null) {
+        UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: user.userEmail,
+          password: user.motDePasse!,
+        );
+        //await userCredential.user!.updateEmail(user.userEmail);
+        await userCredential.user!.updateDisplayName(user.userName);
+        //await userCredential.user!.updatePassword(user.motDePasse!);
+
+        await user.saveUser().then((val) async {
+          await Client(idUser: userCredential.user!.uid, tickets: 0)
+              .register()
+              .then((value) {
+            Navigator.of(context).pushAndRemoveUntil(
+              PageTransition(
+                child: const HomePage(),
+                type: PageTransitionType.leftToRight,
+              ),
+                  (route) => false,
+            );
+          });
+        });
+
+        print('Utilisateur enregistré avec succès: ${userCredential.user?.uid}');
+      } else {
+        // Gérer le cas où le mot de passe est null
+        print('Le mot de passe est null. Impossible de créer l\'utilisateur.');
+      }
+
+    } catch (e) {
+      print('Erreur lors de l\'inscription de l\'utilisateur: $e');
+      debugPrint(e.toString());
+      toaster(
+        message: "Utilisateur enregistré avec succès",
+        color: Colors.green,
+        long: true,
+      );
     }
   }
 // fin de la classe

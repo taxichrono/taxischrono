@@ -6,7 +6,9 @@ import 'package:taxischrono/modeles/applicationuser/appliactionuser.dart';
 import 'package:taxischrono/screens/composants/delayed_animation.dart';
 import 'package:taxischrono/varibles/variables.dart';
 
+import '../homepage.dart';
 import 'login_number.dart';
+import 'login_page.dart';
 import 'otppage.dart';
 
 class SignupPage extends StatefulWidget {
@@ -31,6 +33,7 @@ class _SignupPageState extends State<SignupPage> {
   bool loader = false;
   final keyscafold = GlobalKey<ScaffoldState>();
   PhoneNumber? numberSubmited;
+
   //  le debu du corps
   @override
   Widget build(BuildContext context) {
@@ -53,131 +56,131 @@ class _SignupPageState extends State<SignupPage> {
       body: loader
           ? const LoadingComponen()
           : SingleChildScrollView(
-              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Column(
+            children: [
+              Container(
+                margin: const EdgeInsets.symmetric(
+                  vertical: 40,
+                ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                        vertical: 40,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          DelayedAnimation(
-                            delay: 1500,
-                            child: Text(
-                              "Formulaire d'enregistrement",
-                              style: GoogleFonts.poppins(
-                                color: dredColor,
-                                fontSize: 25,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 22),
-                          DelayedAnimation(
-                            delay: 2500,
-                            child: Text(
-                              "  Enregistrez vous et commencer a profiter de nos différents packages et disponibilités pour vos multiples déplacements.",
-                              style: GoogleFonts.poppins(
-                                color: Colors.grey[600],
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 35),
-                    signupForm(),
-                    const SizedBox(height: 35),
-                    SizedBox(
-                      width: double.infinity,
-                      child: DelayedAnimation(
-                        delay: 5500,
-                        child: SizedBox(
-                          width: double.infinity,
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                elevation: 1,
-                                shape: const StadiumBorder(),
-                                backgroundColor: dredColor,
-                                padding: const EdgeInsets.symmetric(
-                                  // horizontal: 125,
-                                  vertical: 12,
-                                ),
-                              ),
-                              child: Text(
-                                'INSCRIPTION',
-                                style: GoogleFonts.poppins(
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: 4),
-                              ),
-                              onPressed: () async {
-                                await userRegister();
-                                loader = false;
-                                setState(() {});
-                              }),
-                        ),
-                      ),
-                    ),
-                    spacerHeight(10),
                     DelayedAnimation(
-                      delay: 5500,
-                      child: SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            shape: const StadiumBorder(),
-                            backgroundColor: dredColor,
-                            padding: const EdgeInsets.symmetric(
-                              vertical: 12,
-                            ),
-                          ),
-                          child: Text(
-                            'J\'ai déjà un compte? Connexion',
-                            style: GoogleFonts.poppins(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
+                      delay: 1500,
+                      child: Text(
+                        "Formulaire d'enregistrement",
+                        style: GoogleFonts.poppins(
+                          color: dredColor,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
-                    const SizedBox(height: 10),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        child: DelayedAnimation(
-                          delay: 6500,
-                          child: Text(
-                            "Retour",
-                            style: GoogleFonts.poppins(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
+                    const SizedBox(height: 22),
+                    DelayedAnimation(
+                      delay: 2500,
+                      child: Text(
+                        "  Enregistrez vous et commencer a profiter de nos différents packages et disponibilités pour vos multiples déplacements.",
+                        style: GoogleFonts.poppins(
+                          color: Colors.grey[600],
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
-                    spacerHeight(15),
                   ],
                 ),
               ),
-            ),
+              const SizedBox(height: 35),
+              signupForm(),
+              const SizedBox(height: 35),
+              SizedBox(
+                width: double.infinity,
+                child: DelayedAnimation(
+                  delay: 5500,
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          elevation: 1,
+                          shape: const StadiumBorder(),
+                          backgroundColor: dredColor,
+                          padding: const EdgeInsets.symmetric(
+                            // horizontal: 125,
+                            vertical: 12,
+                          ),
+                        ),
+                        child: Text(
+                          'INSCRIPTION',
+                          style: GoogleFonts.poppins(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                              letterSpacing: 4),
+                        ),
+                        onPressed: () async {
+                          await userRegister();
+                          loader = false;
+                          setState(() {});
+                        }),
+                  ),
+                ),
+              ),
+              spacerHeight(10),
+              DelayedAnimation(
+                delay: 5500,
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: const StadiumBorder(),
+                      backgroundColor: dredColor,
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 12,
+                      ),
+                    ),
+                    child: Text(
+                      'J\'ai déjà un compte? Connexion',
+                      style: GoogleFonts.poppins(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: DelayedAnimation(
+                    delay: 6500,
+                    child: Text(
+                      "Retour",
+                      style: GoogleFonts.poppins(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              spacerHeight(15),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
@@ -196,8 +199,8 @@ class _SignupPageState extends State<SignupPage> {
                 return val == null
                     ? "Le nom est obligatoir"
                     : val.length < 3
-                        ? "Entrer un nom valide"
-                        : null;
+                    ? "Entrer un nom valide"
+                    : null;
               },
               decoration: InputDecoration(
                 icon: const Icon(Icons.person),
@@ -224,8 +227,8 @@ class _SignupPageState extends State<SignupPage> {
                 return numberSubmited!.phoneNumber == null
                     ? "le numéro de téléphone est obligatoire"
                     : numberSubmited!.phoneNumber!.length < 13
-                        ? "entrez un numéro de téléphone valide"
-                        : null;
+                    ? "entrez un numéro de téléphone valide"
+                    : null;
               },
               hintText: "Votre Numéro de téléphone",
               inputBorder: UnderlineInputBorder(
@@ -248,8 +251,8 @@ class _SignupPageState extends State<SignupPage> {
                 return val == null
                     ? "L'email est obligatoir"
                     : !isEmail(val)
-                        ? "Entrer une adresse email valide"
-                        : null;
+                    ? "Entrer une adresse email valide"
+                    : null;
               },
               style: police,
               decoration: InputDecoration(
@@ -274,8 +277,8 @@ class _SignupPageState extends State<SignupPage> {
                 return val == null
                     ? "renseignez votre adresse"
                     : val.length < 3
-                        ? "Entrer une adresse valide"
-                        : null;
+                    ? "Entrer une adresse valide"
+                    : null;
               },
               decoration: InputDecoration(
                 icon: const Icon(Icons.person_pin_circle),
@@ -298,8 +301,8 @@ class _SignupPageState extends State<SignupPage> {
                 return val == null
                     ? "Le nom est obligatoir"
                     : val.length < 6
-                        ? "le mot de passe doit avoir 6 caractères"
-                        : null;
+                    ? "le mot de passe doit avoir 6 caractères"
+                    : null;
               },
               decoration: InputDecoration(
                 icon: const Icon(Icons.security),
@@ -330,8 +333,8 @@ class _SignupPageState extends State<SignupPage> {
                 return val == null
                     ? "confirmer le mot de passe"
                     : val != controllerPasse.text
-                        ? "le mot de passe ne corespond pas"
-                        : null;
+                    ? "le mot de passe ne corespond pas"
+                    : null;
               },
               style: police,
               decoration: InputDecoration(
@@ -363,9 +366,9 @@ class _SignupPageState extends State<SignupPage> {
       loader = true;
       setState(() {});
       await ApplicationUser.userExist(
-              userEmail: controllerEmail.text,
-              userPhonNumber: numberSubmited!.phoneNumber)
-          .then((value) async {
+        userEmail: controllerEmail.text,
+        userPhonNumber: numberSubmited!.phoneNumber,
+      ).then((value) async {
         if (value) {
           loader = false;
           setState(() {});
@@ -389,27 +392,33 @@ class _SignupPageState extends State<SignupPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                        "Un utilisateur ayant votre numéro de téléphone ou votre email existe déjà",
-                        style: police.copyWith(
-                            fontSize: 18, fontWeight: FontWeight.w800)),
+                      "Un utilisateur ayant votre numéro de téléphone ou votre email existe déjà",
+                      style: police.copyWith(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
                     spacerHeight(30),
                     boutonText(
-                        context: context,
-                        action: () {
-                          Navigator.of(context).pushReplacement(
-                            PageTransition(
-                                child: const LoginNumber(),
-                                type: PageTransitionType.leftToRight),
-                          );
-                        },
-                        text: "Connectez vous ??"),
+                      context: context,
+                      action: () {
+                        Navigator.of(context).pushReplacement(
+                          PageTransition(
+                            child: const LoginNumber(),
+                            type: PageTransitionType.leftToRight,
+                          ),
+                        );
+                      },
+                      text: "Connectez-vous ?",
+                    ),
                     spacerHeight(15),
                     boutonText(
-                        context: context,
-                        action: () {
-                          Navigator.of(context).pop();
-                        },
-                        text: "Annuler")
+                      context: context,
+                      action: () {
+                        Navigator.of(context).pop();
+                      },
+                      text: "Annuler",
+                    ),
                   ],
                 ),
               ),
@@ -423,21 +432,12 @@ class _SignupPageState extends State<SignupPage> {
             userTelephone: numberSubmited!.phoneNumber,
             motDePasse: controllerPasse.text,
           );
-          await ApplicationUser.loginNumber(
-            chauffeur,
-            context: context,
-            onCodeSend: (verificationId, forceResendingToken) {
-              Navigator.of(context).push(
-                PageTransition(
-                  child: OtpPage(
-                    utilisateur: chauffeur,
-                    verificationId: verificationId,
-                    isauthentication: false,
-                  ),
-                  type: PageTransitionType.leftToRight,
-                ),
-              );
-            },
+          await chauffeur.registerUser(context, chauffeur);
+          Navigator.of(context).push(
+            PageTransition(
+              child: HomePage(),
+              type: PageTransitionType.leftToRight,
+            ),
           );
 
           loader = false;

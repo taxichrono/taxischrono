@@ -29,6 +29,7 @@ class _PrixTypeState extends State<PrixType> {
   final List<String> listType = ['Ramasage', "Depot", 'Covoiturage', "Courses"];
   String selectTedType = 'Ramasage';
   final List<double> listPrice = [
+    150,
     300,
     500,
     750,

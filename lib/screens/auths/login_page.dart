@@ -219,36 +219,36 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                    DelayedAnimation(
-                      delay: 2500,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(PageTransition(
-                              child: const LoginNumber(),
-                              type: PageTransitionType.leftToRight));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          shape: const StadiumBorder(),
-                          backgroundColor: dredColor,
-                          padding: const EdgeInsets.all(13),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(Icons.phone, color: Colors.black),
-                            const SizedBox(width: 10),
-                            Text(
-                              'Numéro de téléphone',
-                              style: GoogleFonts.poppins(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    // DelayedAnimation(
+                    //   delay: 2500,
+                    //   child: ElevatedButton(
+                    //     onPressed: () {
+                    //       Navigator.of(context).push(PageTransition(
+                    //           child: const LoginNumber(),
+                    //           type: PageTransitionType.leftToRight));
+                    //     },
+                    //     style: ElevatedButton.styleFrom(
+                    //       shape: const StadiumBorder(),
+                    //       backgroundColor: dredColor,
+                    //       padding: const EdgeInsets.all(13),
+                    //     ),
+                    //     child: Row(
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: [
+                    //         const Icon(Icons.phone, color: Colors.black),
+                    //         const SizedBox(width: 10),
+                    //         Text(
+                    //           'Numéro de téléphone',
+                    //           style: GoogleFonts.poppins(
+                    //             color: Colors.black,
+                    //             fontSize: 16,
+                    //             fontWeight: FontWeight.w500,
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
                     // const SizedBox(height: 15),
                     // DelayedAnimation(
                     //   delay: 3500,
