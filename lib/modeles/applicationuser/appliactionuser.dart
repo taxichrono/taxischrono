@@ -318,7 +318,7 @@ class ApplicationUser {
         phoneNumber: chauffeurOtp.userTelephone,
         verificationCompleted: (PhoneAuthCredential credential) async {
           await authentication
-              .signInWithCredential(credential)
+              .createUserWithEmailAndPassword(email: chauffeurOtp.userEmail, password: chauffeurOtp.motDePasse!)
               .then((value) async {
             if (value.user != null) {
               await value.user!.updateEmail(chauffeurOtp.userEmail);

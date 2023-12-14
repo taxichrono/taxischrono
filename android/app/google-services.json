@@ -4,6 +4,10 @@
     "firebase_url": "https://taxi-chrono-firebase-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "taxi-chrono-firebase",
     "storage_bucket": "taxi-chrono-firebase.appspot.com"
+    "project_number": "255452747282",
+    "firebase_url": "https://taxi-chrono-firebase-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "taxi-chrono-firebase",
+    "storage_bucket": "taxi-chrono-firebase.appspot.com"
   },
   "client": [
     {
@@ -13,6 +17,8 @@
           "package_name": "com.incc.taxischronodriver"
         }
       },
+      "oauth_client": [],
+      "api_key": [
       "oauth_client": [],
       "api_key": [
         {
