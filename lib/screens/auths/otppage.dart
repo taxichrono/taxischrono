@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:pinput/pinput.dart';
-import 'package:taxischrono/modeles/applicationuser/client.dart';
+import 'package:taxischronouser/modeles/applicationuser/client.dart';
 
 import '../../modeles/applicationuser/appliactionuser.dart';
 import '../../varibles/variables.dart';

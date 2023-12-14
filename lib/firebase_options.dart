@@ -29,6 +29,10 @@ class DefaultFirebaseOptions {
           'DefaultFirebaseOptions have not been configured for macos - '
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -59,7 +63,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDx0VVYSYc3OgedqVZ94DkkpN55QMlvaM4',
-    appId: '1:255452747282:android:1234326ff464ecba99eacb',
+    appId: '1:255452747282:android:51bfb960e730768a99eacb',
     messagingSenderId: '255452747282',
     projectId: 'taxi-chrono-firebase',
     databaseURL: 'https://taxi-chrono-firebase-default-rtdb.europe-west1.firebasedatabase.app',
@@ -68,7 +72,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDj3_GGcwwzvU7o9eMoZVfTCaMYAodBAVY',
-    appId: '1:255452747282:ios:88a2c681903ab58499eacb',
+    appId: '1:255452747282:ios:d2bbbe8dd39fc7a099eacb',
     messagingSenderId: '255452747282',
     projectId: 'taxi-chrono-firebase',
     databaseURL: 'https://taxi-chrono-firebase-default-rtdb.europe-west1.firebasedatabase.app',

@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:taxischrono/modeles/applicationuser/appliactionuser.dart';
-import 'package:taxischrono/modeles/applicationuser/client.dart';
+import 'package:taxischronouser/modeles/applicationuser/appliactionuser.dart';
+import 'package:taxischronouser/modeles/applicationuser/client.dart';
 import 'package:the_apple_sign_in/the_apple_sign_in.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 class Authservices extends ChangeNotifier {
   GoogleSignInAccount? account;
@@ -97,9 +97,9 @@ class Authservices extends ChangeNotifier {
           email: email, password: password);
       if (util.user != null) {
         // final actioncodeSettigns = ActionCodeSettings(
-        //   url: 'https://www.incc.taxischrono.app/?email=${util.user!.email}',
-        //   androidPackageName: "com.incc.taxischrono.app",
-        //   iOSBundleId: "com.incc.taxischrono.app",
+        //   url: 'https://www.incc.taxischronouser.app/?email=${util.user!.email}',
+        //   androidPackageName: "com.incc.taxischronouser.app",
+        //   iOSBundleId: "com.incc.taxischronouser.app",
         //   androidInstallApp: true,
         //   handleCodeInApp: true,
         // );
@@ -117,9 +117,11 @@ class Authservices extends ChangeNotifier {
 // flutter logOUt
   Future login(email, password) async {
     try {
+     
       await authentication.signInWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
+      
       return e.code;
     }
   }

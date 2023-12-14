@@ -1,4 +1,4 @@
-package com.incc.taxischronoUser.app
+package com.incc.taxischronouser.app
 
 import io.flutter.embedding.android.FlutterActivity
 

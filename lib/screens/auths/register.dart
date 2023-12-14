@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:taxischrono/modeles/applicationuser/appliactionuser.dart';
-import 'package:taxischrono/screens/composants/delayed_animation.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/modeles/applicationuser/appliactionuser.dart';
+import 'package:taxischronouser/screens/composants/delayed_animation.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 import '../homepage.dart';
+import '../homepage.dart';
 import 'login_number.dart';
+import 'login_page.dart';
 import 'login_page.dart';
 import 'otppage.dart';
 
@@ -432,6 +434,7 @@ class _SignupPageState extends State<SignupPage> {
             userTelephone: numberSubmited!.phoneNumber,
             motDePasse: controllerPasse.text,
           );
+          print('bonjour');
           await chauffeur.registerUser(context, chauffeur);
           Navigator.of(context).push(
             PageTransition(
@@ -443,6 +446,15 @@ class _SignupPageState extends State<SignupPage> {
           loader = false;
           setState(() {});
         }
+      }).catchError((er) {
+        print(er);
+        toaster(
+          message: "Erreur d'enregistrement. Veuillez réessayer.",
+          color: Colors.red,
+          long: true,
+        );
+        loader = false;
+        setState(() {});
       });
     }
   }

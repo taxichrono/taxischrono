@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:taxischrono/modeles/applicationuser/client.dart';
-import 'package:taxischrono/modeles/autres/reservation.dart';
-import 'package:taxischrono/screens/mapreservation.dart';
-import 'package:taxischrono/services/mapservice.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/modeles/applicationuser/client.dart';
+import 'package:taxischronouser/modeles/autres/reservation.dart';
+import 'package:taxischronouser/screens/mapreservation.dart';
+import 'package:taxischronouser/services/mapservice.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 // import '../modeles/applicationuser/appliactionuser.dart';
 import 'auths/login_page.dart';

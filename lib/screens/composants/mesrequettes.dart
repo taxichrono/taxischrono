@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:taxischrono/modeles/autres/transaction.dart';
+import 'package:taxischronouser/modeles/autres/transaction.dart';
 
-import 'package:taxischrono/screens/composants/courswaiting.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/screens/composants/courswaiting.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 class MesRequettes extends StatefulWidget {
   const MesRequettes({super.key});

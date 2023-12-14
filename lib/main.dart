@@ -2,8 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:taxischrono/firebase_options.dart';
-import 'package:taxischrono/screens/homepage.dart';
+import 'package:taxischronouser/firebase_options.dart';
+import 'package:taxischronouser/screens/homepage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

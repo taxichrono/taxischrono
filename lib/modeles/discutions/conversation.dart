@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:taxischrono/modeles/discutions/message.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/modeles/discutions/message.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 class Conversation {
   // final String idSender;

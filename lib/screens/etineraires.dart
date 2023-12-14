@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:taxischrono/screens/prixtype.dart';
-import 'package:taxischrono/services/mapservice.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/screens/prixtype.dart';
+import 'package:taxischronouser/services/mapservice.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 import 'dart:async';
 
 class SearchDestinaitionPage extends StatefulWidget {

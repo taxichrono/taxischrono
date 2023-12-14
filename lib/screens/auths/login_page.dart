@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'package:taxischrono/screens/composants/delayed_animation.dart';
-import 'package:taxischrono/screens/auths/register.dart';
-import 'package:taxischrono/services/firebaseauthservice.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/screens/composants/delayed_animation.dart';
+import 'package:taxischronouser/screens/auths/register.dart';
+import 'package:taxischronouser/services/firebaseauthservice.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 import 'login_number.dart';
 
