@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 // import 'package:flutter/material.dart';
 // import 'package:page_transition/page_transition.dart';
-import 'package:taxischrono/modeles/applicationuser/appliactionuser.dart';
-import 'package:taxischrono/modeles/applicationuser/chauffeur.dart';
-import 'package:taxischrono/modeles/autres/codepromo.dart';
-import 'package:taxischrono/modeles/autres/forfetclient.dart';
-import 'package:taxischrono/modeles/autres/package.dart';
-import 'package:taxischrono/modeles/autres/reservation.dart';
-import 'package:taxischrono/modeles/autres/transaction.dart';
-import 'package:taxischrono/modeles/discutions/message.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/modeles/applicationuser/appliactionuser.dart';
+import 'package:taxischronouser/modeles/applicationuser/chauffeur.dart';
+import 'package:taxischronouser/modeles/autres/codepromo.dart';
+import 'package:taxischronouser/modeles/autres/forfetclient.dart';
+import 'package:taxischronouser/modeles/autres/package.dart';
+import 'package:taxischronouser/modeles/autres/reservation.dart';
+import 'package:taxischronouser/modeles/autres/transaction.dart';
+import 'package:taxischronouser/modeles/discutions/message.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 import '../../screens/homepage.dart';
 

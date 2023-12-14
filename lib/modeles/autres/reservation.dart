@@ -2,7 +2,7 @@
 
 // import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore/cloud_firestore.dart' as fst;
-import 'package:taxischrono/modeles/autres/transaction.dart';
+import 'package:taxischronouser/modeles/autres/transaction.dart';
 
 import '../../services/mapservice.dart';
 import '../../varibles/variables.dart';

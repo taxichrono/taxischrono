@@ -8,9 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:http/http.dart' as http;
 // import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:taxischrono/modeles/applicationuser/client.dart';
-import 'package:taxischrono/modeles/autres/package.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/modeles/applicationuser/client.dart';
+import 'package:taxischronouser/modeles/autres/package.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 // import 'package:toast/toast.dart';
 // import 'package:url_launcher/url_launcher.dart';
 // import 'package:url_launcher/url_launcher.dart';
@@ -39,12 +39,13 @@ class _PackState extends State<PackageUi> {
       'currency': 'XAF',
       'reference': reference,
       'email': authentication.currentUser!.email,
-      'phone': phoneNumber,
+      'phone': '+237680000000',
       'name': authentication.currentUser!.displayName,
       "description":
           "paiement de packages pour ${authentication.currentUser!.displayName}"
     };
     final dio = Dio();
+    print(mapPey);
 
     try {
       await dio
@@ -249,7 +250,7 @@ class _PackState extends State<PackageUi> {
       debugPrint("Erreur $e");
       toaster(
           message:
-              "Erreur de paiement: veillez vérifier votre connexion internet",
+              "Erreur de paiement: veillez vérifier votre connexion internet veuillez verifier vos paramètre",
           long: true);
     }
   }
@@ -520,7 +521,7 @@ class _PackState extends State<PackageUi> {
                     Navigator.of(context).pop();
                     loading = true;
                     setState(() {});
-
+                    print(authentication.currentUser);
                     await payement(
                       phoneNumber: authentication.currentUser!.phoneNumber!,
                       packages: package,

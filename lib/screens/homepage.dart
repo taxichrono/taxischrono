@@ -11,16 +11,16 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'package:page_transition/page_transition.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:taxischrono/modeles/autres/reservation.dart';
-import 'package:taxischrono/modeles/autres/transaction.dart';
-import 'package:taxischrono/modeles/autres/vehicule.dart';
-import 'package:taxischrono/screens/composants/coursrunning.dart';
-import 'package:taxischrono/screens/composants/courswaiting.dart';
-import 'package:taxischrono/screens/etineraires.dart';
-import 'package:taxischrono/screens/composants/sidebar.dart';
-import 'package:taxischrono/services/mapservice.dart';
+import 'package:taxischronouser/modeles/autres/reservation.dart';
+import 'package:taxischronouser/modeles/autres/transaction.dart';
+import 'package:taxischronouser/modeles/autres/vehicule.dart';
+import 'package:taxischronouser/screens/composants/coursrunning.dart';
+import 'package:taxischronouser/screens/composants/courswaiting.dart';
+import 'package:taxischronouser/screens/etineraires.dart';
+import 'package:taxischronouser/screens/composants/sidebar.dart';
+import 'package:taxischronouser/services/mapservice.dart';
 
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -45,17 +45,19 @@ class _HomePageState extends State<HomePage> {
 
   Set<Marker> markersSets = {};
 
-  setMrkers() async {
+  Future<void> setMarkers() async {
+    // Récupérer les bytes de l'image à partir de l'URL
     Uint8List bytes = (await NetworkAssetBundle(Uri.parse(imgurl)).load(imgurl))
         .buffer
         .asUint8List();
+
     if (location != null) {
       markersSets.add(
         Marker(
-          markerId: MarkerId(authentication.currentUser!.uid),
+          markerId: MarkerId(authentication.currentUser?.uid ?? ''),
           position: location!,
           infoWindow: const InfoWindow(
-            title: "Votre Positions actuelle",
+            title: "Votre Position actuelle",
           ),
           icon: BitmapDescriptor.fromBytes(bytes),
         ),
@@ -80,7 +82,7 @@ class _HomePageState extends State<HomePage> {
           .then((value) {
         setState(() {
           location = LatLng(value.latitude, value.longitude);
-          setMrkers();
+          setMarkers();
         });
       });
     }
@@ -88,7 +90,7 @@ class _HomePageState extends State<HomePage> {
     Geolocator.getPositionStream().listen((event) {
       setState(() {
         location = LatLng(event.latitude, event.longitude);
-        setMrkers();
+        setMarkers();
       });
     });
   }
@@ -121,7 +123,7 @@ class _HomePageState extends State<HomePage> {
     estVisible = boutoon();
 
     reservationEncour();
-    setMrkers();
+    setMarkers();
     Timer.periodic(const Duration(seconds: 3), (timer) {
       setState(() {});
     });
@@ -214,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: () {
                   if (location != null) {
                     voirMaPosition();
-                    setMrkers();
+                    setMarkers();
                     setState(() {});
                   } else {
                     demandePosition();
@@ -382,7 +384,7 @@ class _HomePageState extends State<HomePage> {
           setState(() {
             estVisible = boutoon();
           });
-          setMrkers();
+          setMarkers();
           setState(() {});
         }
       });

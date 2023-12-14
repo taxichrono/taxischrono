@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:taxischrono/modeles/applicationuser/appliactionuser.dart';
-import 'package:taxischrono/modeles/autres/reservation.dart';
-import 'package:taxischrono/modeles/autres/transaction.dart';
-import 'package:taxischrono/varibles/variables.dart';
-// import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/modeles/applicationuser/appliactionuser.dart';
+import 'package:taxischronouser/modeles/autres/reservation.dart';
+import 'package:taxischronouser/modeles/autres/transaction.dart';
+import 'package:taxischronouser/varibles/variables.dart';
+// import 'package:taxischronouser/varibles/variables.dart';
 
 class Chauffeur extends ApplicationUser {
   final String numeroPermi;
@@ -51,7 +51,7 @@ class Chauffeur extends ApplicationUser {
         userDescription: userMap['userDescription'],
         userProfile: userMap['userProfile'],
         userid: userMap['userid'],
-        expireCniDate: (userMap['expireCniDate'] as Timestamp).toDate(),
+        expireCniDate: userMap['expireCniDate'],
         idVehicule: chauffeurMap['idVehicule'],
         numeroPermi: chauffeurMap['numeroPermi'],
         expirePermiDate:

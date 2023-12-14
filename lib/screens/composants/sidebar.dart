@@ -4,12 +4,12 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:taxischrono/screens/auths/login_page.dart';
+import 'package:taxischronouser/screens/auths/login_page.dart';
 
-import 'package:taxischrono/screens/composants/mesrequettes.dart';
-import 'package:taxischrono/screens/paquage.dart';
-// import 'package:taxischrono/services/firebaseauthservice.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/screens/composants/mesrequettes.dart';
+import 'package:taxischronouser/screens/paquage.dart';
+// import 'package:taxischronouser/services/firebaseauthservice.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../auths/profilepage.dart';
@@ -38,7 +38,7 @@ class _SideBarState extends State<SideBar> {
             decoration: BoxDecoration(color: dredColor),
             accountName: isConnected
                 ? Text(
-                    authentication.currentUser!.displayName!,
+                    authentication.currentUser!.email!,
                     style: police.copyWith(
                       fontWeight: FontWeight.w700,
                     ),
@@ -46,7 +46,7 @@ class _SideBarState extends State<SideBar> {
                 : Text("Veillez vous connecter",
                     style: police.copyWith(fontWeight: FontWeight.bold)),
             accountEmail:
-                !isConnected ? null : Text(authentication.currentUser!.email!),
+                !isConnected ? null : Text(authentication.currentUser!.displayName!),
 
             currentAccountPicture: CircleAvatar(
               radius: 70,
@@ -166,7 +166,7 @@ class _SideBarState extends State<SideBar> {
               leading: const Icon(Icons.call),
               // ignore: avoid_returning_null_for_void
               onTap: () async {
-                await FlutterPhoneDirectCaller.callNumber("+237658549711");
+                await FlutterPhoneDirectCaller.callNumber("+237671551022");
               }),
           //         : getsnac(
           //             title: "DÉCONNEXION", msg: "Aucun compte connecté"),

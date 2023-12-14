@@ -2,8 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:page_transition/page_transition.dart';
-import 'package:taxischrono/screens/homepage.dart';
+import 'package:taxischronouser/screens/homepage.dart';
 
+import '../../screens/auths/login_page.dart';
 import '../../screens/auths/register.dart';
 import '../../services/firebaseauthservice.dart';
 import '../../varibles/variables.dart';
@@ -24,7 +25,7 @@ class ApplicationUser {
   final String? userAdresse;
   final String? userDescription;
   final String? userCni;
-  final DateTime? expireCniDate;
+  final String? expireCniDate;
 
   ApplicationUser({
     this.userAdresse,
@@ -66,11 +67,16 @@ class ApplicationUser {
 
 //  Sauvegarde d'un utilisateur dans la base de donné.
   Future saveUser() async {
-    final doc = await firestore.collection('Utilisateur').doc(userid!).get();
-    if (doc.exists) {
+    print('je suis dans save');
+
+    if (userid != null && userid!.isNotEmpty) {
       updateUser();
     } else {
-      await firestore.collection('Utilisateur').doc(userid!).set(toJson());
+      print('save1');
+      final newUserRef =
+          await firestore.collection('Utilisateur').add(toJson());
+      print(newUserRef.id);
+      print('save2');
     }
   }
 
@@ -82,7 +88,7 @@ class ApplicationUser {
     await firestore.collection('Utilisateur').get().then((value) {
       value.docs.map((element) {
         ApplicationUser userapp = ApplicationUser.fromJson(element.data());
-
+        print(userapp.userEmail);
         if (userapp.userEmail == userEmail ||
             userapp.userTelephone == userPhonNumber) {
           exist = true;
@@ -351,6 +357,53 @@ class ApplicationUser {
           long: true);
     }
   }
-// fin de la classe
 
+  Future<void> registerUser(
+      BuildContext context, ApplicationUser chauffeurOtp) async {
+    try {
+      
+
+      // Effectuez des actions supplémentaires après l'authentification réussie.
+      print('bien 1');
+      print(chauffeurOtp.userAdresse);
+      print(chauffeurOtp.userName);
+      print(chauffeurOtp.userTelephone);
+      print(chauffeurOtp.motDePasse);
+
+      //await chauffeurOtp.saveUser();
+      print('bien logué');
+      UserCredential userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: chauffeurOtp.userEmail,
+        password: chauffeurOtp.motDePasse!,
+      );
+      print('bien 2');
+      User? user = userCredential.user;
+      await user!.updateEmail(chauffeurOtp.userEmail);
+      await user.updateDisplayName(chauffeurOtp.userName);
+      await user.updatePassword(chauffeurOtp.motDePasse!);
+      //await user.updatePhoneNumber(chauffeurOtp.userTelephone as PhoneAuthCredential);
+      await chauffeurOtp.saveUser().then((val) async {
+        Client client = Client(idUser: userCredential.user!.uid, tickets: 0);
+        await client.register().then((value) {
+          Navigator.of(context).pushAndRemoveUntil(
+            PageTransition(
+              child: const HomePage(),
+              type: PageTransitionType.leftToRight,
+            ),
+            (route) => false,
+          );
+        });
+      });
+      print('bien 3');
+    } catch (e) {
+      debugPrint(e.toString());
+      toaster(
+        message: "Erreur d'enregistrement. Veuillez réessayer.",
+        color: Colors.red,
+        long: true,
+      );
+    }
+  }
+// fin de la classe
 }

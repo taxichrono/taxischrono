@@ -12,19 +12,19 @@ import 'package:http/http.dart' as http;
 import 'package:page_transition/page_transition.dart';
 
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:taxischrono/modeles/applicationuser/appliactionuser.dart';
-import 'package:taxischrono/modeles/applicationuser/client.dart';
-import 'package:taxischrono/modeles/autres/reservation.dart';
-import 'package:taxischrono/modeles/autres/transaction.dart';
-import 'package:taxischrono/modeles/autres/vehicule.dart';
-import 'package:taxischrono/screens/auths/completteprofile.dart';
-import 'package:taxischrono/screens/auths/login_page.dart';
-import 'package:taxischrono/screens/homepage.dart';
-import 'package:taxischrono/screens/paquage.dart';
+import 'package:taxischronouser/modeles/applicationuser/appliactionuser.dart';
+import 'package:taxischronouser/modeles/applicationuser/client.dart';
+import 'package:taxischronouser/modeles/autres/reservation.dart';
+import 'package:taxischronouser/modeles/autres/transaction.dart';
+import 'package:taxischronouser/modeles/autres/vehicule.dart';
+import 'package:taxischronouser/screens/auths/completteprofile.dart';
+import 'package:taxischronouser/screens/auths/login_page.dart';
+import 'package:taxischronouser/screens/homepage.dart';
+import 'package:taxischronouser/screens/paquage.dart';
 
-import 'package:taxischrono/services/mapservice.dart';
+import 'package:taxischronouser/services/mapservice.dart';
 
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 import 'composants/maprequest.dart';
 
@@ -508,9 +508,9 @@ class _MapReservationState extends State<MapReservation> {
   }
 
   String imgurl =
-      "https://firebasestorage.googleapis.com/v0/b/taxischrono-c12c9.appspot.com/o/Bonhomme%20LOca122%20(2).png?alt=media&token=a1394dea-4b12-4d90-b223-4473746317ef";
+      "https://firebasestorage.googleapis.com/v0/b/taxischronouser-c12c9.appspot.com/o/Bonhomme%20LOca122%20(2).png?alt=media&token=a1394dea-4b12-4d90-b223-4473746317ef";
   String carUrl =
-      "https://firebasestorage.googleapis.com/v0/b/taxischrono-c12c9.appspot.com/o/Bonhomme%20LOca%20voit.png?alt=media&token=c10224dc-8e5b-48fe-b713-d01f70eb6866";
+      "https://firebasestorage.googleapis.com/v0/b/taxischronouser-c12c9.appspot.com/o/Bonhomme%20LOca%20voit.png?alt=media&token=c10224dc-8e5b-48fe-b713-d01f70eb6866";
 
 //////////////////////////////////////////////////////////
   // fin de la fontion principale

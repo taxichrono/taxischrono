@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:taxischrono/modeles/applicationuser/appliactionuser.dart';
-import 'package:taxischrono/screens/composants/delayed_animation.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/modeles/applicationuser/appliactionuser.dart';
+import 'package:taxischronouser/screens/composants/delayed_animation.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
+import '../homepage.dart';
 import 'login_number.dart';
+import 'login_page.dart';
 import 'otppage.dart';
 
 class SignupPage extends StatefulWidget {
@@ -363,9 +365,9 @@ class _SignupPageState extends State<SignupPage> {
       loader = true;
       setState(() {});
       await ApplicationUser.userExist(
-              userEmail: controllerEmail.text,
-              userPhonNumber: numberSubmited!.phoneNumber)
-          .then((value) async {
+        userEmail: controllerEmail.text,
+        userPhonNumber: numberSubmited!.phoneNumber,
+      ).then((value) async {
         if (value) {
           loader = false;
           setState(() {});
@@ -389,27 +391,33 @@ class _SignupPageState extends State<SignupPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                        "Un utilisateur ayant votre numéro de téléphone ou votre email existe déjà",
-                        style: police.copyWith(
-                            fontSize: 18, fontWeight: FontWeight.w800)),
+                      "Un utilisateur ayant votre numéro de téléphone ou votre email existe déjà",
+                      style: police.copyWith(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
                     spacerHeight(30),
                     boutonText(
-                        context: context,
-                        action: () {
-                          Navigator.of(context).pushReplacement(
-                            PageTransition(
-                                child: const LoginNumber(),
-                                type: PageTransitionType.leftToRight),
-                          );
-                        },
-                        text: "Connectez vous ??"),
+                      context: context,
+                      action: () {
+                        Navigator.of(context).pushReplacement(
+                          PageTransition(
+                            child: const LoginNumber(),
+                            type: PageTransitionType.leftToRight,
+                          ),
+                        );
+                      },
+                      text: "Connectez-vous ?",
+                    ),
                     spacerHeight(15),
                     boutonText(
-                        context: context,
-                        action: () {
-                          Navigator.of(context).pop();
-                        },
-                        text: "Annuler")
+                      context: context,
+                      action: () {
+                        Navigator.of(context).pop();
+                      },
+                      text: "Annuler",
+                    ),
                   ],
                 ),
               ),
@@ -423,26 +431,27 @@ class _SignupPageState extends State<SignupPage> {
             userTelephone: numberSubmited!.phoneNumber,
             motDePasse: controllerPasse.text,
           );
-          await ApplicationUser.loginNumber(
-            chauffeur,
-            context: context,
-            onCodeSend: (verificationId, forceResendingToken) {
-              Navigator.of(context).push(
-                PageTransition(
-                  child: OtpPage(
-                    utilisateur: chauffeur,
-                    verificationId: verificationId,
-                    isauthentication: false,
-                  ),
-                  type: PageTransitionType.leftToRight,
-                ),
-              );
-            },
+          print('bonjour');
+          await chauffeur.registerUser(context, chauffeur);
+          Navigator.of(context).push(
+            PageTransition(
+              child: HomePage(),
+              type: PageTransitionType.leftToRight,
+            ),
           );
 
           loader = false;
           setState(() {});
         }
+      }).catchError((er) {
+        print(er);
+        toaster(
+          message: "Erreur d'enregistrement. Veuillez réessayer.",
+          color: Colors.red,
+          long: true,
+        );
+        loader = false;
+        setState(() {});
       });
     }
   }

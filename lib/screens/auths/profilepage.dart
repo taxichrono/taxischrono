@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:taxischrono/modeles/applicationuser/client.dart';
-import 'package:taxischrono/modeles/autres/forfetclient.dart';
-import 'package:taxischrono/modeles/autres/transaction.dart';
-import 'package:taxischrono/screens/homepage.dart';
-import 'package:taxischrono/services/firebaseauthservice.dart';
+import 'package:taxischronouser/modeles/applicationuser/client.dart';
+import 'package:taxischronouser/modeles/autres/forfetclient.dart';
+import 'package:taxischronouser/modeles/autres/transaction.dart';
+import 'package:taxischronouser/screens/homepage.dart';
+import 'package:taxischronouser/services/firebaseauthservice.dart';
 
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -104,9 +104,7 @@ class ProfileScreen extends StatelessWidget {
                                     const SizedBox(
                                       height: 80,
                                     ),
-                                    Text(
-                                        authentication
-                                            .currentUser!.displayName!,
+                                    Text(authentication.currentUser!.email!,
                                         textAlign: TextAlign.center,
                                         style: police.copyWith(
                                             fontSize: 18,

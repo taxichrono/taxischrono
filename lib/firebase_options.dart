@@ -25,7 +25,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -44,42 +47,32 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCZYRrRq7YYTS6BewMAf4KG8e-H-VLwzKg',
-    appId: '1:388406613111:web:1f29325671402afc62a272',
-    messagingSenderId: '388406613111',
-    projectId: 'taxischrono-c12c9',
-    authDomain: 'taxischrono-c12c9.firebaseapp.com',
-    storageBucket: 'taxischrono-c12c9.appspot.com',
-    measurementId: 'G-PVGRBTMHNF',
+    apiKey: 'AIzaSyB_bnIXrbMvREa0rRxG7ETc_qhk3sE1tP4',
+    appId: '1:255452747282:web:1c42266d92e607c899eacb',
+    messagingSenderId: '255452747282',
+    projectId: 'taxi-chrono-firebase',
+    authDomain: 'taxi-chrono-firebase.firebaseapp.com',
+    databaseURL: 'https://taxi-chrono-firebase-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'taxi-chrono-firebase.appspot.com',
+    measurementId: 'G-KF47VNVX87',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBVYyZjeyE7UmSJQTSVqkVnYvk_QfGW9sg',
-    appId: '1:388406613111:android:3104c566d967dbf662a272',
-    messagingSenderId: '388406613111',
-    projectId: 'taxischrono-c12c9',
-    storageBucket: 'taxischrono-c12c9.appspot.com',
+    apiKey: 'AIzaSyDx0VVYSYc3OgedqVZ94DkkpN55QMlvaM4',
+    appId: '1:255452747282:android:51bfb960e730768a99eacb',
+    messagingSenderId: '255452747282',
+    projectId: 'taxi-chrono-firebase',
+    databaseURL: 'https://taxi-chrono-firebase-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'taxi-chrono-firebase.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCnJdnwA1d6hT_SO5mPUKt10b6iJbilscw',
-    appId: '1:388406613111:ios:85067b9b0c4b61e762a272',
-    messagingSenderId: '388406613111',
-    projectId: 'taxischrono-c12c9',
-    storageBucket: 'taxischrono-c12c9.appspot.com',
-    androidClientId: '388406613111-4ama9814rmq80k2ikfg1is3dl8pqd4sa.apps.googleusercontent.com',
-    iosClientId: '388406613111-grs0geujeucqj4d4acpqk8k02f9qbvju.apps.googleusercontent.com',
-    iosBundleId: 'com.incc.taxischrono.app',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCnJdnwA1d6hT_SO5mPUKt10b6iJbilscw',
-    appId: '1:388406613111:ios:85067b9b0c4b61e762a272',
-    messagingSenderId: '388406613111',
-    projectId: 'taxischrono-c12c9',
-    storageBucket: 'taxischrono-c12c9.appspot.com',
-    androidClientId: '388406613111-4ama9814rmq80k2ikfg1is3dl8pqd4sa.apps.googleusercontent.com',
-    iosClientId: '388406613111-grs0geujeucqj4d4acpqk8k02f9qbvju.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDj3_GGcwwzvU7o9eMoZVfTCaMYAodBAVY',
+    appId: '1:255452747282:ios:d2bbbe8dd39fc7a099eacb',
+    messagingSenderId: '255452747282',
+    projectId: 'taxi-chrono-firebase',
+    databaseURL: 'https://taxi-chrono-firebase-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'taxi-chrono-firebase.appspot.com',
     iosBundleId: 'com.incc.taxischrono.app',
   );
 }

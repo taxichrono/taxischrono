@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'package:taxischrono/screens/composants/delayed_animation.dart';
-import 'package:taxischrono/screens/auths/register.dart';
-import 'package:taxischrono/services/firebaseauthservice.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/screens/composants/delayed_animation.dart';
+import 'package:taxischronouser/screens/auths/register.dart';
+import 'package:taxischronouser/services/firebaseauthservice.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 
 import 'login_number.dart';
 
@@ -219,36 +219,36 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                    DelayedAnimation(
-                      delay: 2500,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(PageTransition(
-                              child: const LoginNumber(),
-                              type: PageTransitionType.leftToRight));
-                        },
-                        style: ElevatedButton.styleFrom(
-                          shape: const StadiumBorder(),
-                          backgroundColor: dredColor,
-                          padding: const EdgeInsets.all(13),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(Icons.phone, color: Colors.black),
-                            const SizedBox(width: 10),
-                            Text(
-                              'Numéro de téléphone',
-                              style: GoogleFonts.poppins(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    // DelayedAnimation(
+                    //   delay: 2500,
+                    //   child: ElevatedButton(
+                    //     onPressed: () {
+                    //       Navigator.of(context).push(PageTransition(
+                    //           child: const LoginNumber(),
+                    //           type: PageTransitionType.leftToRight));
+                    //     },
+                    //     style: ElevatedButton.styleFrom(
+                    //       shape: const StadiumBorder(),
+                    //       backgroundColor: dredColor,
+                    //       padding: const EdgeInsets.all(13),
+                    //     ),
+                    //     child: Row(
+                    //       mainAxisAlignment: MainAxisAlignment.center,
+                    //       children: [
+                    //         const Icon(Icons.phone, color: Colors.black),
+                    //         const SizedBox(width: 10),
+                    //         Text(
+                    //           'Numéro de téléphone',
+                    //           style: GoogleFonts.poppins(
+                    //             color: Colors.black,
+                    //             fontSize: 16,
+                    //             fontWeight: FontWeight.w500,
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
                     // const SizedBox(height: 15),
                     // DelayedAnimation(
                     //   delay: 3500,

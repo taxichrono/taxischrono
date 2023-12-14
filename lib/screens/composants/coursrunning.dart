@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:taxischrono/modeles/autres/transaction.dart';
-import 'package:taxischrono/screens/homepage.dart';
-import 'package:taxischrono/varibles/variables.dart';
+import 'package:taxischronouser/modeles/autres/transaction.dart';
+import 'package:taxischronouser/screens/homepage.dart';
+import 'package:taxischronouser/varibles/variables.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class CoursRunning extends StatefulWidget {
