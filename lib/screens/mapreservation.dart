@@ -165,7 +165,7 @@ class _MapReservationState extends State<MapReservation> {
                                             decoration: BoxDecoration(
                                                 color: Colors.grey.shade200,
                                                 borderRadius: const BorderRadius
-                                                        .vertical(
+                                                    .vertical(
                                                     top: Radius.circular(20))),
                                             child: Column(
                                               crossAxisAlignment:
@@ -508,11 +508,10 @@ class _MapReservationState extends State<MapReservation> {
   }
 
   String imgurl =
-      "https://firebasestorage.googleapis.com/v0/b/taxischronouser-c12c9.appspot.com/o/Bonhomme%20LOca122%20(2).png?alt=media&token=a1394dea-4b12-4d90-b223-4473746317ef";
+      "https://firebasestorage.googleapis.com/v0/b/taxischrono-c12c9.appspot.com/o/Bonhomme%20LOca122%20(2).png?alt=media&token=a1394dea-4b12-4d90-b223-4473746317ef";
   String carUrl =
-      "https://firebasestorage.googleapis.com/v0/b/taxischronouser-c12c9.appspot.com/o/Bonhomme%20LOca%20voit.png?alt=media&token=c10224dc-8e5b-48fe-b713-d01f70eb6866";
+      "https://firebasestorage.googleapis.com/v0/b/taxischrono-c12c9.appspot.com/o/Bonhomme%20LOca%20voit.png?alt=media&token=c10224dc-8e5b-48fe-b713-d01f70eb6866";
 
 //////////////////////////////////////////////////////////
   // fin de la fontion principale
-
 }
