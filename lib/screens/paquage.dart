@@ -6,6 +6,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:taxischronouser/modeles/applicationuser/appliactionuser.dart';
 // import 'package:http/http.dart' as http;
 // import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:taxischronouser/modeles/applicationuser/client.dart';
@@ -521,9 +522,9 @@ class _PackState extends State<PackageUi> {
                     Navigator.of(context).pop();
                     loading = true;
                     setState(() {});
-                    print(authentication.currentUser);
                     await payement(
-                      phoneNumber: authentication.currentUser!.phoneNumber!,
+                      phoneNumber:
+                          '237600225588',
                       packages: package,
                       name: name,
                       scaffoldkey: keyscaf,
