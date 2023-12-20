@@ -298,41 +298,50 @@ class _PackState extends State<PackageUi> {
                   packDetailGrid(
                     name: "Pack1",
                     package: Packages(
-                        prixPackage: 1000,
-                        idPackage: 100011,
-                        nombreDeTickets: 11),
+                        prixPackage: 100,
+                        idPackage: 10011,
+                        nombreDeTickets: 1),
                     rating: 4.5,
                     image: 'illustration1.jpg',
                   ),
                   packDetailGrid(
                     name: "Pack2",
                     package: Packages(
-                        prixPackage: 2000,
-                        idPackage: 200022,
-                        nombreDeTickets: 22),
+                        prixPackage: 1000,
+                        idPackage: 100011,
+                        nombreDeTickets: 11),
                     rating: 4.5,
                     image: 'illustration2.jpg',
                   ),
                   packDetailGrid(
                     name: "Pack3",
                     package: Packages(
-                        prixPackage: 5000,
-                        idPackage: 500055,
-                        nombreDeTickets: 55),
+                        prixPackage: 2000,
+                        idPackage: 200022,
+                        nombreDeTickets: 22),
                     rating: 4.5,
                     image: 'illustration1.jpg',
                   ),
                   packDetailGrid(
                     name: "Pack4",
                     package: Packages(
-                        prixPackage: 3000,
-                        idPackage: 300033,
-                        nombreDeTickets: 33),
+                        prixPackage: 5000,
+                        idPackage: 500055,
+                        nombreDeTickets: 55),
                     rating: 4.5,
                     image: 'illustration2.jpg',
                   ),
                   packDetailGrid(
                     name: "Pack5",
+                    package: Packages(
+                        prixPackage: 3000,
+                        idPackage: 300033,
+                        nombreDeTickets: 33),
+                    rating: 4.5,
+                    image: 'illustration1.jpg',
+                  ),
+                  packDetailGrid(
+                    name: "Pack6",
                     package: Packages(
                         prixPackage: 10000,
                         idPackage: 10000110,
